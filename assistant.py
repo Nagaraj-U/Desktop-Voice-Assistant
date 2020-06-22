@@ -1,15 +1,15 @@
-
+#JARVIS DESKTOP ASSISTANT
 
 
 import codecs
 import pyttsx3
 import speech_recognition as sr
-import datetime #to get present time
-import wikipedia #to search in wikipedia
+import datetime         #to get present time
+import wikipedia        #to search in wikipedia
 import pyaudio
-import webbrowser  #for opening websites
-import os  #for opening music etc
-import smtplib
+import webbrowser       #for opening websites
+import os               #for opening music etc
+import smtplib          #for sending mail
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
@@ -28,7 +28,7 @@ def wishme():
         speak("Good Evening")
     else:
         speak("Good Night")
-    speak("I am Nagaraj. Please tell me How may I help You")
+    speak("I am jarvis. Please tell me How may I help You")
 
 def takecommand():
     r=sr.Recognizer()
@@ -52,8 +52,8 @@ def sendEmail(to,content):
     server=smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
-    server.login('nagarajullegaddi01@gmail.com','nagaraj@123')
-    server.sendmail('nagarajullegaddi01@gmail.com',to,content)
+    server.login('gmail_here','password_here')
+    server.sendmail('gmail_here',to,content)
     server.close()
 
 if __name__ == '__main__':
@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
         elif "play music" in query:
             speak("playing music")
-            music_dir='D:\\songs'
+            music_dir='D:\\songs'  #add accordingly
             songs=os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir,songs[0]))
@@ -102,7 +102,7 @@ if __name__ == '__main__':
             speak(f"time is {strTime}")
 
         elif "open code" in query:
-            codepath="C:\\Users\\Nagaraj U\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            codepath="C:\\Users\\Nagaraj U\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" #add accordingly
             speak("opening visual studio code")
             os.startfile(codepath)
 
@@ -110,12 +110,12 @@ if __name__ == '__main__':
             try:
                 speak("What should i say")
                 content=takecommand()
-                to="nagarajullegaddi01@gmail.com"
+                to="your gmail"
                 sendEmail(to,content)
                 speak("email has been sent !")
             except Exception as e:
                 print(e)
-                speak("sorry can't send email to nagaraj")
+                speak("sorry can't send email to person_name")
 
 
 
