@@ -1,12 +1,14 @@
 # Personal_Assistant-JARVIS
 
-To set up Install the fallowing packages :
+Requirements :
 
 1. pip install pyttsx3 
 
 2. pip install SpeechRecognition 
 
 3. pip install wikipedia  #to access the wikipedia info
+
+4. pip install pyaudio
 
 
 
