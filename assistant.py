@@ -89,6 +89,10 @@ if __name__ == '__main__':
         elif "open gmail" in query:
             speak("opening gmail")
             webbrowser.open("gmail.com")
+        
+        elif "open drive" in query:
+            speak("opening drive")
+            webbrowser.open("drive.google.com")
 
         elif "play music" in query:
             speak("playing music")
