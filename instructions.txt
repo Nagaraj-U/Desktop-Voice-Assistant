@@ -1,0 +1,10 @@
+if you get following errors:
+1.  AttributeError: Could not find PyAudio; check installation
+
+		solution:
+			In Terminal type
+
+			1. pip install pipwin
+
+			2. pipwin install pyaudio
+
